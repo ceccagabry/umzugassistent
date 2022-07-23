@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDataCollector_lib.a  CMakeFiles/DataCollector_lib.dir/Inputparser.cpp.o CMakeFiles/DataCollector_lib.dir/CommandExecuter.cpp.o CMakeFiles/DataCollector_lib.dir/RuleMatcher.cpp.o CMakeFiles/DataCollector_lib.dir/TarCommand.cpp.o CMakeFiles/DataCollector_lib.dir/DiskUsageCommand.cpp.o CMakeFiles/DataCollector_lib.dir/MoveCommand.cpp.o
+/usr/bin/ranlib libDataCollector_lib.a

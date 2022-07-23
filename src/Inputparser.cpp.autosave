@@ -1,0 +1,41 @@
+#include "inputparser.h"
+
+InputParser::InputParser(int &argc, char **argv)
+{
+    cout << "You have entered " << argc
+         << " arguments:" << "\n";
+
+    for (int i=1; i < argc; ++i)
+    {
+        cout << argv[i] << "\n";
+        this->directories.push_back(std::string(argv[i]));
+        init();
+    }
+}
+
+void InputParser::init()
+{
+    for (int i= 0; i < directories.size(); i++)
+    {
+        const fs::path directoryPath{directories.at(i), "/"};
+        bool isFolderExisting = checkFolder(directoryPath);
+        if(!isFolderExisting)
+        {
+            cout << "The directory doesn't exist." << endl;
+            fs::create_directory(directoryPath);
+            cout << "I have create the directory: " << directoryPath << endl;
+        }
+        else
+        {
+            cout << "The directory exist." << endl;
+        }
+    }
+}
+
+bool InputParser::checkFolder (const fs::path& path)
+{
+    if(fs::exists(path))
+        return true;
+    else
+        return false;
+}

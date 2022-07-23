@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/DataCollector_tst.dir/main.cpp.o CMakeFiles/DataCollector_tst.dir/TestRuleMatcher.cpp.o  -o DataCollector_tst  ../src/libDataCollector_lib.a ../lib/libgmock.a ../lib/libgtest.a ../lib/libgtest_main.a ../lib/libgtest.a -lpthread 

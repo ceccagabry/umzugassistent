@@ -1,0 +1,1 @@
+/usr/bin/c++     CMakeFiles/DataCollector.dir/__/main.cpp.o  -o DataCollector  libDataCollector_lib.a ../../src/libinotify-cpp.a -lpthread 
