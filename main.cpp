@@ -2,15 +2,16 @@
 #include <inotify-cpp/NotifierBuilder.h>
 #include <filesystem>
 #include <thread>
+#include <ctime>
+#include <sstream>
 
 #include <unistd.h>
 #include <cstdlib>
 #include <signal.h>
 
 #include "src/header/FileWatcher.hpp"
-#include "src/header/Inputparser.hpp"
+#include "src/header/InputParser.hpp"
 #include "src/header/RuleMatcher.hpp"
-#include "src/header/CommandExecuter.hpp"
 #include "src/header/TarCommand.hpp"
 #include "src/header/DiskUsageCommand.hpp"
 #include "src/header/MoveCommand.hpp"
@@ -21,14 +22,7 @@ using namespace inotify;
 int main(int argc, char** argv)
 {
     cout << "[MAIN] Enter the folder: " << argc << " arguments:" << "\n";
-    
-    // auto iss = std::istringstream{"The quick brown fox"};
-    // auto str = std::string{};
-
-    // while (iss >> str) {
-    //     process(str);
-    // }     
-    
+       
     //parse the argument and check if the folder is existing
     InputParser input(argc, argv);
     bool retVal = input.checkArguments();
@@ -75,7 +69,7 @@ int main(int argc, char** argv)
     if(rm.checkRule(notification.path.c_str())) {
         cout << "[MAIN] Rules checked! OK!"<< endl;   
 
-        string payload = "-s ";
+        string payload =  " -h ";
         string fileName = input.getArgument(argumentsNumbers::watchDir) +"/" + "diskUsage.txt";
         string destDirectory = "";
         DiskUsageCommand diskUsageCommand(payload, fileName);
@@ -115,7 +109,9 @@ int main(int argc, char** argv)
 
     } else {
         cout << "[MAIN] Rules checked! NOT OK! file discarded"<< endl; 
+        return false;
     }
+    return true;
   };
 
   // Set the a separate unexpected event handler for all other events. An exception is thrown by

@@ -31,6 +31,9 @@ RuleMatcher RuleMatcher::regExp(std::string regExp)
 
 bool RuleMatcher::checkRule(std::string path)
 {
+    if(path.empty()){
+        return false;
+    }
     cout << "[RuleMatcher] path: " << path << endl;
     // get filename
 

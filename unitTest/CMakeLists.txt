@@ -9,12 +9,24 @@ add_executable(
   ${BINARY} 
   main.cpp
   TestRuleMatcher.cpp
+  TestInputParser.cpp
+  TestDiskUsageCommand.cpp
+  TestMoveCommand.cpp
+  TestTarCommand.cpp
 )
 
-include(FetchContent)
-FetchContent_Declare(googletest)
+# Now simply link against gtest or gtest_main as needed. Eg
+add_executable(main main.cpp)
+target_link_libraries(main gtest_main)
+add_test(NAME main_test COMMAND main)
 
-include(GoogleTest)
+
+# include(FetchContent)
+# FetchContent_Declare(
+#   googletest
+# )
+
+# include(GoogleTest)
 
 add_test(NAME ${BINARY} COMMAND ${BINARY})
 
@@ -27,18 +39,3 @@ target_link_libraries(
 )
 
 enable_testing()
-
-# add_executable(
-#   hello_test
-#   hello_test.cpp
-#   TestRuleMatcher
-#   TestRuleMatcher.cpp
-# )
-# target_link_libraries(
-#   hello_test
-#   TestRuleMatcher
-#   GTest::gtest_main
-# )
-
-
-# gtest_discover_tests(TestRuleMatcher)

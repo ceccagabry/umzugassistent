@@ -1,4 +1,4 @@
-#include "header/Inputparser.hpp"
+#include "header/InputParser.hpp"
 #include <regex>
 
 InputParser::InputParser(int &argc, char **argv)
@@ -45,7 +45,7 @@ string InputParser::getArgument (int argNum)
 {
     if (argNum > arguments.size()) {
         cout << "Error, this argument is not present!" << endl;
-        return nullptr;
+        return "";
     }
 
     return arguments.at(argNum);
