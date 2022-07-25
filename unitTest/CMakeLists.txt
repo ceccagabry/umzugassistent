@@ -20,14 +20,6 @@ add_executable(main main.cpp)
 target_link_libraries(main gtest_main)
 add_test(NAME main_test COMMAND main)
 
-
-# include(FetchContent)
-# FetchContent_Declare(
-#   googletest
-# )
-
-# include(GoogleTest)
-
 add_test(NAME ${BINARY} COMMAND ${BINARY})
 
 target_link_libraries(

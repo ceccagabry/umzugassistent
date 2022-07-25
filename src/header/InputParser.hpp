@@ -6,7 +6,7 @@
 #include <cstdint>
 #include <filesystem>
 #include <vector>
-#include <inotify-cpp/FileSystemAdapter.h>
+#include "../lib/libinotify-cpp/include/FileSystemAdapter.h"
 
 using namespace std;
 namespace fs = std::filesystem;

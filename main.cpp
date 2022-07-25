@@ -1,5 +1,4 @@
 #include <iostream>
-#include <inotify-cpp/NotifierBuilder.h>
 #include <filesystem>
 #include <thread>
 #include <ctime>
@@ -9,6 +8,7 @@
 #include <cstdlib>
 #include <signal.h>
 
+#include "../lib/libinotify-cpp/include/NotifierBuilder.h"
 #include "src/header/FileWatcher.hpp"
 #include "src/header/InputParser.hpp"
 #include "src/header/RuleMatcher.hpp"
