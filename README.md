@@ -46,3 +46,9 @@ The following features must be implemented:
         linux 2.6.13
     build
         cmake 3.8
+
+## ToDos
+
+1. Implement a better handling of the input parameters. Idea: Boost.Program_options as the project already depends on Boost
+2. Implement an interface (Facade pattern?) to leverage the FileWatcher and INotify mechanisms to check for file creation
+3. Refactor the Command approach to task execution. Introduce an Executor which handles an ordered list of commands
