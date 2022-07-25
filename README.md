@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/ceccagabry/umzugassistent/tree/main.svg?style=shield)](https://app.circleci.com/pipelines/github/ceccagabry/umzugassistent?branch=main)
+
 # Umzugassistent - Data collector
 
 ## Task
@@ -28,3 +30,19 @@ The following features must be implemented:
 * Use modern C++!
 * Use the platform of your choice (Linux, BSD, MacOS, Windows, etc.)
   * We use Linux but everything else is cool, too.
+
+
+## Build Example
+
+     mkdir build && cd build
+     cmake ..
+     make all
+
+## Dependencies
+
+    lib
+        boost 1.54.0
+        c++17
+        linux 2.6.13
+    build
+        cmake 3.8
