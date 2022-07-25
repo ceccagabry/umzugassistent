@@ -3,7 +3,7 @@
 
 InputParser::InputParser(int &argc, char **argv)
 {
-    cout << "You have entered " << argc
+    cout << "[INPUT_PARSER] You have entered " << argc
          << " arguments:" << "\n";
 
     for (int i=1; i < argc; ++i)
@@ -21,12 +21,12 @@ bool InputParser::checkArguments()
         bool isFolderExisting = checkFolder(directoryPath);
         if(!isFolderExisting)
         {
-            cout << "The directory doesn't exist." << endl;
+            cout << "[INPUT_PARSER] The directory doesn't exist." << endl;
             return false;
         }
         else
         {
-            cout << "The directory exist." << endl;
+            cout << "[INPUT_PARSER] The directory exist." << endl;
         }
     }
     return true;
@@ -44,7 +44,7 @@ bool InputParser::checkFolder (const fs::path& path)
 string InputParser::getArgument (int argNum)
 {
     if (argNum > arguments.size()) {
-        cout << "Error, this argument is not present!" << endl;
+        cout << "[INPUT_PARSER] Error, this argument is not present!" << endl;
         return "";
     }
 

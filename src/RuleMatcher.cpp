@@ -44,8 +44,6 @@ bool RuleMatcher::checkRule(std::string path)
     cout << "[RuleMatcher] filename_end: " << filename.substr(filename.size()- strEnd.size(), strEnd.size()) << endl;
     string fileName_mid = ""; 
     
-    cout << "[RuleMatcher] filename.size(): " << filename.size() << endl;
-    
     int offsetSize = strBegin.size() + strEnd.size();
     if(filename.size() - offsetSize > 0)
         fileName_mid = filename.substr(strBegin.size(),(filename.size() - offsetSize));    

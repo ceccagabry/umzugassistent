@@ -1,8 +1,5 @@
 #include "header/TarCommand.hpp"
 
-// #include <ctime>
-// #include <sstream>
-
 TarCommand::TarCommand(std::string payLoad, std::string fileName, std::string directory)
 {
     m_payLoad = payLoad;
