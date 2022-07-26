@@ -38,6 +38,11 @@ The following features must be implemented:
      cmake ..
      make all
 
+## Usage
+
+     cd src
+     ./Datacollector source_dir dest_dir
+
 ## Dependencies
 
     lib
